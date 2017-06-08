@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Marmo Fire",
+  "version": "1.0",
+
+  "description": "Adds functionality and UI enhancements for the University of Waterloo Marmoset submission site. (Not in any way affiliated with the University of Waterloo).",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://marmoset.student.cs.uwaterloo.ca/*"],
+      "js": ["uiEnhance.js"]
+    }
+  ]
+}
