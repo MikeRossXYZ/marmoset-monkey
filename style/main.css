@@ -1,0 +1,15 @@
+.wrapper
+{
+    background: red;
+}
+
+th 
+{
+    background-color: #000;
+}
+
+body 
+{
+    padding: 100px;
+    background: red;
+}
