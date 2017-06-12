@@ -10,13 +10,15 @@
 
   "content_scripts": [
     {
-      "matches": ["*://marmoset.student.cs.uwaterloo.ca/*"],
-      "js": ["uiEnhance.js"],
-      "css": ["style/main.css"]
+      "matches": ["*://marmoset.student.cs.uwaterloo.ca/", "*://marmoset.student.cs.uwaterloo.ca/view/course.jsp*"],
+      "js": ["js/main.js"],
+      "css": ["css/main.css", "css/course.css"]
+    },
+    {
+      "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/project.jsp*"],
+      "js": ["js/main.js"],
+      "css": ["css/main.css", "css/project.css"]
     }
-  ],
-
-  "web_accessible_resources": [
-    "style/main.css"
   ]
+
 }
