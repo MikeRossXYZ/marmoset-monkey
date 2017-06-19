@@ -15,9 +15,14 @@
       "css": ["css/main.css", "css/course.css"]
     },
     {
-      "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/project.jsp*"],
+      "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/project.jsp*", "*://marmoset.student.cs.uwaterloo.ca/view/submission.jsp*"],
+      "js": ["js/main.js", "js/project.js"],
+      "css": ["css/main.css", "css/project_submission.css"]
+    },
+    {
+      "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/submitProject.jsp*"],
       "js": ["js/main.js"],
-      "css": ["css/main.css", "css/project.css"]
+      "css": ["css/main.css", "css/submit.css"]
     }
   ]
 

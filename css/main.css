@@ -34,6 +34,11 @@ div.breadcrumb
     color: #000;
 }
 
+div.breadcrumb p a
+{
+    color: #000 !important;
+}
+
 div.logout
 {
     background: #E4B429;
