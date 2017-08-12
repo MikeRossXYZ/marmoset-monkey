@@ -17,7 +17,7 @@
     {
       "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/project.jsp*", "*://marmoset.student.cs.uwaterloo.ca/view/submission.jsp*"],
       "js": ["js/main.js", "js/project.js"],
-      "css": ["css/main.css", "css/project_submission.css"]
+      "css": ["css/main.css", "css/project.css"]
     },
     {
       "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/submitProject.jsp*"],
