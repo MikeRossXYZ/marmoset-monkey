@@ -18,10 +18,6 @@ for (var i=1; i < projectTableRows.length; i++)
 {
     var cols = projectTableRows[i].children;
 
-    // Column 3 is release tests in some questions
-    // Need to modify this to search for the string in header column to handle cases
-    //    when public tests are present
-    
     for (c=0; c<rowsToCalculatePercent.length; c++)
     {
         var col_idx = rowsToCalculatePercent[c];
@@ -54,7 +50,4 @@ for (var i=1; i < projectTableRows.length; i++)
             cols[col_idx].className += "red-bg";
         }
     }
-        
-
-
 }

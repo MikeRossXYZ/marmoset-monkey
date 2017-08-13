@@ -10,8 +10,13 @@
 
   "content_scripts": [
     {
-      "matches": ["*://marmoset.student.cs.uwaterloo.ca/", "*://marmoset.student.cs.uwaterloo.ca/view/course.jsp*"],
+      "matches": ["*://marmoset.student.cs.uwaterloo.ca/"],
       "js": ["js/main.js"],
+      "css": ["css/main.css"]
+    },
+    {
+      "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/course.jsp*"],
+      "js": ["js/main.js", "js/course.js"],
       "css": ["css/main.css", "css/course.css"]
     },
     {
