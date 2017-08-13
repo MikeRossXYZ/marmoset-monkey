@@ -1,27 +1,53 @@
 
-function load_score (elm, url) {
+MARMOFIRE.MARKS.loadScores = function (name, elm, url)
+{
+    elm.innerHTML = "loading...";
+    
     var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function () { 
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            elm.innerHTML = xhr.responseXML.getElementsByTagName("table")[0].getElementsByTagName("tr")[1].getElementsByTagName("td")[3].innerHTML;
+    xhr.onreadystatechange = function ()
+    { 
+        if (xhr.readyState == 4 && xhr.status == 200)
+        {
+            var idx = -1;
+            for (i = 0; i < xhr.responseXML.getElementsByTagName("table")[0].getElementsByTagName("tr")[0].children.length; i++)
+            {
+                if (xhr.responseXML.getElementsByTagName("table")[0].getElementsByTagName("tr")[0].children[i].innerHTML.indexOf("release tests") >= 0 || xhr.responseXML.getElementsByTagName("table")[0].getElementsByTagName("tr")[0].children[i].innerHTML.indexOf("public") >= 0)
+                {
+                    idx = i;
+                }
+            }
+            if (idx == -1 || xhr.responseXML.getElementsByTagName("tbody")[0].children.length < 2)
+            {
+                elm.innerHTML = "?"
+            }
+            else
+            {
+                elm.innerHTML = xhr.responseXML.getElementsByTagName("table")[0].getElementsByTagName("tr")[1].getElementsByTagName("td")[idx].innerHTML
+            }
+            MARMOFIRE.UI.colourScoreCell(elm);
         }
     }
-    
-    // TODO: figure out why I need to use a full URL and can't just pass in the provided path from root
-    xhr.open("GET", "https://marmoset.student.cs.uwaterloo.ca/view/project.jsp?projectPK="+url, true);
+
+    xhr.open("GET", "https://" + window.location.hostname + url, true);
     xhr.responseType = "document";
     xhr.send();
 }
 
-function modifyAssignmentsPage()
+MARMOFIRE.UI.modifyAssignmentsPage = function ()
 {
     var assignmentRows = document.querySelectorAll(".wrapper table tbody tr");
+    assignmentRows[0].children[1].innerHTML = "most recent<br/>grade";
+
     for (i=1; i<assignmentRows.length; i++) // start after header 
     {
         var cols = assignmentRows[i].children;
-        load_score(cols[1], cols[1].getElementsByTagName("a")[0].getAttribute("href").substring("/view/project.jsp?projectPK=".length));
+        // Change link of project name
+        var link = cols[1].getElementsByTagName("a")[0].getAttribute("href");
+        cols[0].getElementsByTagName("a")[0].setAttribute("href", link);
+        MARMOFIRE.MARKS.loadScores(cols[0].children[0].innerHTML, cols[1], link);
+
     }
 }
 
-modifyAssignmentsPage();
+MARMOFIRE.UI.modifyAssignmentsPage();

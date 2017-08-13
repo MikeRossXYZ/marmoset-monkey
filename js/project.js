@@ -1,4 +1,3 @@
-
 var projectTableHeader = document.querySelectorAll(".wrapper table tbody tr th");
 
 var rowsToCalculatePercent = [];
@@ -13,41 +12,4 @@ for (i=0; i < projectTableHeader.length; i++)
 
 let projectTableRows = document.querySelectorAll(".wrapper table tbody tr");
 
-// row 0 is the header, so start loop from 1
-for (var i=1; i < projectTableRows.length; i++)
-{
-    var cols = projectTableRows[i].children;
-
-    for (c=0; c<rowsToCalculatePercent.length; c++)
-    {
-        var col_idx = rowsToCalculatePercent[c];
-    
-        var txtScore = cols[col_idx].innerHTML;
-        if (txtScore.split("/").length != 2)
-        {
-            cols[col_idx].className += "gray-bg";
-            continue;
-        }
-        var marksAwarded = parseFloat(txtScore.split("/")[0].trim());
-        var marksTotal = parseFloat(txtScore.split("/")[1].trim());
-        
-        // Instead of hard coding the background with JS, a CSS class should be used 
-    
-        if (marksAwarded / marksTotal == 1)
-        {
-            cols[col_idx].className += "green-bg";
-        }
-        else if (marksAwarded / marksTotal >= 0.80)
-        {
-            cols[col_idx].className += "yellow-bg";
-        }
-        else if (marksAwarded / marksTotal >= 0.50)
-        {
-            cols[col_idx].className += "orange-bg";
-        }
-        else
-        {
-            cols[col_idx].className += "red-bg";
-        }
-    }
-}
+MARMOFIRE.UI.colourScores(projectTableRows, rowsToCalculatePercent);

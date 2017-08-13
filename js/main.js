@@ -1,9 +1,22 @@
-function globalModify()
+// Create namespace
+if (typeof MARMOFIRE == "undefined")
 {
-    // Wrap body content in wrapper
+    var MARMOFIRE = { "course": "" };
+    if (document.getElementsByClassName("breadcrumb")[0].getElementsByTagName('a').length > 0)
+    {
+        MARMOFIRE.course = document.getElementsByClassName("breadcrumb")[0].children[1].getElementsByTagName("a")[0].innerText;
+    }   
+}
+
+// Create UI manipulation nested namespace
+MARMOFIRE["UI"] = MARMOFIRE["UI"] || {};
+// Create MARKS nested namespace
+MARMOFIRE["MARKS"] = MARMOFIRE["MARKS"] || {};
+
+MARMOFIRE.UI.addWrapper = function() 
+{
     var wrapper = document.createElement("div");
     wrapper.setAttribute("class", "wrapper"); 
-    wrapper.setAttribute("style", "padding:0 30px;")
     var bodyElements = document.querySelectorAll("body > :not(div)");
     for (var i=0; i < bodyElements.length; ++i)
     {
@@ -12,4 +25,51 @@ function globalModify()
     document.querySelector("div.breadcrumb").parentNode.insertBefore(wrapper,document.querySelector("div.breadcrumb").nextSibling);
 }
 
-globalModify();
+MARMOFIRE.UI.addWrapper();
+
+MARMOFIRE.UI.colourScores = function(rows, colsToColour)
+{
+    // row 0 is the header, so start loop from 1
+    for (var i=1; i < rows.length; i++)
+    {
+        var cols = rows[i].children;
+    
+        for (c=0; c<colsToColour.length; c++)
+        {
+            var col_idx = colsToColour[c];
+            
+            MARMOFIRE.UI.colourScoreCell(cols[col_idx]);
+        }
+    }
+}
+
+MARMOFIRE.UI.colourScoreCell = function(cell)
+{
+    var txtScore = cell.innerHTML;
+    if (txtScore.split("/").length != 2)
+    {
+        cell.className += "gray-bg";
+        return;
+    }
+    var marksAwarded = parseFloat(txtScore.split("/")[0].trim());
+    var marksTotal = parseFloat(txtScore.split("/")[1].trim());
+    
+    // Instead of hard coding the background with JS, a CSS class should be used 
+
+    if (marksAwarded / marksTotal == 1)
+    {
+        cell.className += "green-bg";
+    }
+    else if (marksAwarded / marksTotal >= 0.80)
+    {
+        cell.className += "yellow-bg";
+    }
+    else if (marksAwarded / marksTotal >= 0.50)
+    {
+        cell.className += "orange-bg";
+    }
+    else
+    {
+        cell.className += "red-bg";
+    }
+}
