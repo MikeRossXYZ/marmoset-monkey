@@ -8,10 +8,10 @@ if (typeof MARMOFIRE == "undefined")
     }   
 }
 
-// Create UI manipulation nested namespace
+// Create namespace
 MARMOFIRE["UI"] = MARMOFIRE["UI"] || {};
-// Create MARKS nested namespace
 MARMOFIRE["MARKS"] = MARMOFIRE["MARKS"] || {};
+MARMOFIRE["UTIL"] = MARMOFIRE["UTIL"] || {};
 
 MARMOFIRE.UI.addWrapper = function() 
 {
@@ -72,4 +72,10 @@ MARMOFIRE.UI.colourScoreCell = function(cell)
     {
         cell.className += "red-bg";
     }
+}
+
+MARMOFIRE.UTIL.escapeHtml = function (str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
 }

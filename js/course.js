@@ -23,7 +23,8 @@ MARMOFIRE.MARKS.loadScores = function (name, elm, url)
             }
             else
             {
-                elm.innerHTML = xhr.responseXML.getElementsByTagName("table")[0].getElementsByTagName("tr")[1].getElementsByTagName("td")[idx].innerHTML
+                var txt = MARMOFIRE.UTIL.escapeHtml(xhr.responseXML.getElementsByTagName("table")[0].getElementsByTagName("tr")[1].getElementsByTagName("td")[idx].innerHTML);
+                elm.innerHTML = txt;
             }
             MARMOFIRE.UI.colourScoreCell(elm);
         }
