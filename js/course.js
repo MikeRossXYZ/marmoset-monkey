@@ -24,7 +24,17 @@ MARMOFIRE.MARKS.loadScores = function (name, elm, url)
             else
             {
                 var txt = MARMOFIRE.UTIL.escapeHtml(xhr.responseXML.getElementsByTagName("table")[0].getElementsByTagName("tr")[1].getElementsByTagName("td")[idx].innerHTML);
-                elm.innerHTML = txt;
+                txt = txt.replace(/\s+/g, '').split("/");
+                txt = txt[0] + " / " + txt[1];
+                console.log(txt)
+                // Remove children
+                while (elm.firstChild) {
+                    elm.removeChild(elm.firstChild);
+                }
+                // Update element
+                markElement = document.createTextNode(txt);
+                console.log(markElement)
+                elm.appendChild(markElement);
             }
             MARMOFIRE.UI.colourScoreCell(elm);
         }
