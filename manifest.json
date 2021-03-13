@@ -4,7 +4,8 @@
   "version": "1.0.4",
   "description": "Adds functionality and UI enhancements for the University of Waterloo Marmoset submission site. (Not in any way affiliated with the University of Waterloo).",
   "icons": {
-    "48": "assets/icons/border-48.png"
+    "48": "assets/icons/icon.svg",
+    "96": "assets/icons/icon.svg"
   },
   "content_scripts": [
     {
