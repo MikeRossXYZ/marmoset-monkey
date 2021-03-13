@@ -3,32 +3,72 @@
   "name": "Marmo Fire",
   "version": "1.0.4",
   "description": "Adds functionality and UI enhancements for the University of Waterloo Marmoset submission site. (Not in any way affiliated with the University of Waterloo).",
-
   "icons": {
     "48": "assets/icons/border-48.png"
   },
-
   "content_scripts": [
     {
-      "matches": ["*://marmoset.student.cs.uwaterloo.ca/", "*://marmoset.student.cs.uwaterloo.ca/view/index.jsp"],
-      "js": ["js/main.js"],
-      "css": ["css/main.css"]
+      "matches": [
+        "*://marmoset.student.cs.uwaterloo.ca/",
+        "*://marmoset.student.cs.uwaterloo.ca/view/index.jsp",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/index.jsp",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/index.jsp"
+      ],
+      "js": [
+        "js/main.js"
+      ],
+      "css": [
+        "css/main.css"
+      ]
     },
     {
-      "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/course.jsp*"],
-      "js": ["js/main.js", "js/course.js"],
-      "css": ["css/main.css", "css/course.css"]
+      "matches": [
+        "*://marmoset.student.cs.uwaterloo.ca/view/course.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/course.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/course.jsp*"
+      ],
+      "js": [
+        "js/main.js",
+        "js/course.js"
+      ],
+      "css": [
+        "css/main.css",
+        "css/course.css"
+      ]
     },
     {
-      "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/project.jsp*", "*://marmoset.student.cs.uwaterloo.ca/view/submission.jsp*"],
-      "js": ["js/main.js", "js/project.js"],
-      "css": ["css/main.css", "css/project.css"]
+      "matches": [
+        "*://marmoset.student.cs.uwaterloo.ca/view/project.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/view/submission.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/project.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/submission.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/project.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/submission.jsp*"
+      ],
+      "js": [
+        "js/main.js",
+        "js/project.js"
+      ],
+      "css": [
+        "css/main.css",
+        "css/project.css"
+      ]
     },
     {
-      "matches": ["*://marmoset.student.cs.uwaterloo.ca/view/submitProject.jsp*"],
-      "js": ["js/main.js"],
-      "css": ["css/main.css", "css/submit.css"]
+      "matches": [
+        "*://marmoset.student.cs.uwaterloo.ca/view/submitProject.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/submitProject.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/submitProject.jsp*"
+      ],
+      "js": [
+        "js/main.js"
+      ],
+      "css": [
+        "css/main.css",
+        "css/submit.css"
+      ]
     }
   ]
-
 }
