@@ -12,10 +12,8 @@
       "matches": [
         "*://marmoset.student.cs.uwaterloo.ca/",
         "*://marmoset.student.cs.uwaterloo.ca/view/index.jsp",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/index.jsp",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/index.jsp"
+        "*://marmoset.student.cs.uwaterloo.ca/marmoset-*/",
+        "*://marmoset.student.cs.uwaterloo.ca/marmoset-*/view/index.jsp"
       ],
       "js": [
         "js/main.js"
@@ -27,8 +25,7 @@
     {
       "matches": [
         "*://marmoset.student.cs.uwaterloo.ca/view/course.jsp*",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/course.jsp*",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/course.jsp*"
+        "*://marmoset.student.cs.uwaterloo.ca/marmoset-*/view/course.jsp*"
       ],
       "js": [
         "js/main.js",
@@ -43,10 +40,8 @@
       "matches": [
         "*://marmoset.student.cs.uwaterloo.ca/view/project.jsp*",
         "*://marmoset.student.cs.uwaterloo.ca/view/submission.jsp*",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/project.jsp*",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/submission.jsp*",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/project.jsp*",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/submission.jsp*"
+        "*://marmoset.student.cs.uwaterloo.ca/marmoset-*/view/project.jsp*",
+        "*://marmoset.student.cs.uwaterloo.ca/marmoset-*/view/submission.jsp*"
       ],
       "js": [
         "js/main.js",
@@ -60,8 +55,7 @@
     {
       "matches": [
         "*://marmoset.student.cs.uwaterloo.ca/view/submitProject.jsp*",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-w16/view/submitProject.jsp*",
-        "*://marmoset.student.cs.uwaterloo.ca/submitServer-s19/view/submitProject.jsp*"
+        "*://marmoset.student.cs.uwaterloo.ca/marmoset-*/view/submitProject.jsp*"
       ],
       "js": [
         "js/main.js"
