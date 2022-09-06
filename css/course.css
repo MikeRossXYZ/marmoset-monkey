@@ -1,5 +1,4 @@
-
-div.wrapper td:nth-child(5), div.wrapper th:nth-child(5)
-{
-    display:none;
+div.wrapper td:nth-child(5),
+div.wrapper th:nth-child(5) {
+  display: none;
 }

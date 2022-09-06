@@ -1,107 +1,93 @@
-body
-{
-    margin: 0;
-    font-family: Georgia, "Droid Serif", "Liberation Serif";
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
-.wrapper
-{
-    padding: 0 30px;
+h1 {
+  font-family: "Barlow Condensed", "Alfa Slab OneAvenir Condensed Heavy", "Droid Sans", sans-serif;
 }
 
-div.header
-{
-    margin: 0;
-    padding: 10px 30px;
-    border: 0;
-    background: #000;
+h2,
+h3,
+p {
+  font-family: "Le Monde Livre", Georgia, "Droid Serif", sans-serif;
 }
 
-div.header p 
-{
-    color: #FFF;
-    font-family: 'Alfa Slab One', Impact, "Droid Sans", Ubuntu, "Liberation Sans", sans-serif;
-    font-weight: normal;
+div.header {
+  margin: 0;
+  padding: 10px 30px;
+  border: 0;
+  background: #000;
 }
 
-div.breadcrumb
-{
-    margin: 0;
-    padding: 5px 30px;
-    background: #FFD54F;
-    color: #000;
+div.header p {
+  color: #fff;
+  font-family: "Barlow Condensed", "Alfa Slab OneAvenir Condensed Heavy", "Droid Sans", sans-serif;
+  font-weight: normal;
 }
 
-div.breadcrumb p a
-{
-    color: #000 !important;
+div.wrapper {
+  padding: 0 30px;
 }
 
-div.logout
-{
-    background: #E4B429;
-    border: 2px #FFD54F solid;        
+div.breadcrumb {
+  margin: 0;
+  padding: 5px 30px;
+  background: #ffd54f;
+  color: #000;
 }
 
-table
-{
-    width:100%;
-    margin: 0;
-    border: 0;
-    text-align:left;
-}       
-
-th 
-{
-    padding: 10px 25px;
-    background: #FFFFAA;
-    border: 0;
-    text-align: left;
+div.breadcrumb p a {
+  color: #000 !important;
 }
 
-tr
-{
+div.logout {
+  background: #e4b429;
+  border: 2px #ffd54f solid;
 }
 
-tr.r0
-{
-    background: none;
+table {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  text-align: left;
 }
 
-td
-{
-    padding: 10px 25px;
-    border-right: 0;
-    border-left: 0;
-    text-align:left;
+th {
+  background: #ffa;
+  border: 0;
+  font-family: "Barlow Condensed", "Alfa Slab OneAvenir Condensed Heavy", "Droid Sans", sans-serif;
+  padding: 10px 25px;
+  text-align: left;
 }
 
-a:link 
-{
+tr.r0 {
+  background: none;
 }
 
-
-.green-bg
-{
-    background: rgba(34,139,34,0.8);
+td {
+  padding: 10px 25px;
+  border-right: 0;
+  border-left: 0;
+  text-align: left;
 }
 
-.yellow-bg
-{
-    background: rgba(255,255,0,.6);
+.green-bg {
+  background: rgb(34 139 34 / 80%);
 }
 
-.orange-bg
-{
-    background: rgba(255,165,0,.6);
+.yellow-bg {
+  background: rgb(255 255 0 / 60%);
 }
 
-.red-bg
-{
-    background: rgba(255,0,0,.6);
+.orange-bg {
+  background: rgb(255 165 0 / 60%);
 }
 
-.gray-bg
-{
-    background: rgba(150,150,150,.6);
+.red-bg {
+  background: rgb(255 0 0 / 60%);
+}
+
+.gray-bg {
+  background: rgb(150 150 150 / 60%);
 }
